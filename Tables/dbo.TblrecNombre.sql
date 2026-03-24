@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[TblrecNombre] (
+  [Representa] [varchar](15) NOT NULL,
+  [Fila] [int] IDENTITY,
+  [CodUsuario] [varchar](25) NULL,
+  [Paterno] [varchar](150) NOT NULL,
+  [Materno] [varchar](150) NOT NULL,
+  [Adicional] [varchar](150) NULL,
+  [Nombre1] [varchar](150) NOT NULL,
+  [Nombre2] [varchar](150) NULL,
+  [Nacimiento] [varchar](15) NULL,
+  [UsRFC] [varchar](20) NULL,
+  [Prefijo] [varchar](20) NOT NULL,
+  [Sufijo] [varchar](20) NOT NULL,
+  [Nacionalidad] [varchar](2) NULL,
+  [Residencia] [int] NULL,
+  [LicenciaConducir] [varchar](20) NULL,
+  [EstadoCivil] [char](1) NULL,
+  [Sexo] [char](1) NULL,
+  [CedulaProfesional] [varchar](20) NOT NULL,
+  [IFE] [varchar](20) NOT NULL,
+  [CURP] [varchar](20) NOT NULL,
+  [ClaveOtroPais] [char](1) NOT NULL,
+  [NumeroDependientes] [int] NULL,
+  [EdadesDependientes] [varchar](10) NOT NULL,
+  [DefuncionFecha] [char](1) NOT NULL,
+  [DefuncionIndicador] [char](1) NOT NULL,
+  [CodPrestamo] [varchar](25) NOT NULL
+)
+ON [PRIMARY]
+GO
