@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[tCsConstanciaFiscal] (
+  [Año] [varchar](4) NOT NULL,
+  [CODUSTITULAR] [char](15) NULL,
+  [FechaApertura] [smalldatetime] NULL,
+  [FechaCancelacion] [smalldatetime] NULL,
+  [NombreCompleto] [varchar](80) NULL,
+  [CURP] [varchar](20) NOT NULL,
+  [RFC] [varchar](20) NOT NULL,
+  [Paterno] [varchar](50) NULL,
+  [Materno] [varchar](50) NULL,
+  [Nombres] [varchar](80) NULL,
+  [CodTpersona] [varchar](2) NULL,
+  [TipoPersona] [varchar](6) NULL,
+  [Calle] [varchar](172) NOT NULL,
+  [Direccion] [varchar](184) NULL,
+  [DomicilioFiscal_CP] [varchar](184) NULL,
+  [RegimenFiscal] [varchar](184) NULL,
+  [montoISR] [numeric](38, 10) NULL,
+  [MontoInteres] [money] NULL,
+  [MontoInversion] [money] NULL,
+  [AjusteAnual_Inflacion] [decimal](38, 11) NULL,
+  [AjusteAnual_Deflacion] [decimal](38, 11) NULL,
+  [InteresActualizado] [decimal](38, 11) NULL,
+  [InteresReal] [decimal](38, 11) NULL,
+  [PerdidaReal] [decimal](38, 11) NULL,
+  [MontoExcento] [decimal](19, 4) NULL,
+  [MontoGravado] [decimal](20, 4) NULL
+)
+ON [PRIMARY]
+GO

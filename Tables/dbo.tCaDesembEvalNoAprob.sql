@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[tCaDesembEvalNoAprob] (
+  [codsolicitud] [varchar](20) NOT NULL,
+  [codoficina] [varchar](4) NOT NULL,
+  [codusuario] [varchar](20) NULL,
+  [fechahorarechazo] [datetime] NULL,
+  [fechasolicitud] [smalldatetime] NULL,
+  [fechadesembolso] [smalldatetime] NULL,
+  [FechaEvaluacion] [smalldatetime] NULL,
+  [valorscore] [varchar](4) NULL,
+  [score_valor] [varchar](4) NULL,
+  [razones] [varchar](15) NULL,
+  [excepcion_raz] [varchar](80) NULL,
+  [secuenciaclienteciclo] [int] NULL,
+  [CalExterno] [int] NULL,
+  [Calificacion] [varchar](20) NULL,
+  [pagomensualcred] [money] NULL,
+  [capacidadpagoporc] [money] NULL,
+  [capacidadpago] [varchar](20) NULL,
+  [calinterno] [int] NULL,
+  [calcappago] [int] NULL,
+  [calpromotor] [money] NULL,
+  [calsucursal] [money] NULL,
+  [ingreso] [money] NULL,
+  [gasto] [money] NULL,
+  [SIC] [varchar](4) NULL,
+  [imorpromotor] [money] NULL,
+  [imorsucursal] [money] NULL,
+  [montopagomensual] [money] NULL,
+  [nrodiasmaximo] [int] NULL
+)
+ON [PRIMARY]
+GO

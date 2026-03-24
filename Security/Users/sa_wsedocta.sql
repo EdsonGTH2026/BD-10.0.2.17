@@ -1,0 +1,3 @@
+﻿CREATE USER [sa_wsedocta]
+  WITHOUT LOGIN
+GO
