@@ -1,0 +1,3 @@
+﻿CREATE USER [admin_igarciao]
+  WITHOUT LOGIN
+GO

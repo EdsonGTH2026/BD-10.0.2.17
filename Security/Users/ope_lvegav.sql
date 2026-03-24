@@ -1,0 +1,3 @@
+﻿CREATE USER [ope_lvegav]
+  WITHOUT LOGIN
+GO

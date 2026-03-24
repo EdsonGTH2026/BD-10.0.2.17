@@ -1,0 +1,3 @@
+﻿CREATE USER [Dev_mmendeza]
+  WITHOUT LOGIN
+GO

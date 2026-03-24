@@ -1,0 +1,3 @@
+﻿CREATE USER [ws_helios_app]
+  WITHOUT LOGIN
+GO

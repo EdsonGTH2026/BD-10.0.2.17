@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[tCsASolRegPromotor] (
+  [codoficina] [varchar](4) NULL,
+  [nomoficina] [varchar](200) NULL,
+  [promotor] [varchar](200) NULL,
+  [d20180201] [money] NULL,
+  [d20180202] [money] NULL,
+  [d20180203] [money] NULL,
+  [d20180205] [money] NULL,
+  [d20180206] [money] NULL,
+  [d20180207] [money] NULL,
+  [d20180208] [money] NULL,
+  [d20180209] [money] NULL,
+  [d20180210] [money] NULL,
+  [d20180212] [money] NULL,
+  [d20180213] [money] NULL,
+  [d20180214] [money] NULL,
+  [d20180215] [money] NULL,
+  [d20180216] [money] NULL,
+  [d20180217] [money] NULL,
+  [d20180219] [money] NULL,
+  [d20180220] [money] NULL,
+  [d20180221] [money] NULL,
+  [d20180222] [money] NULL,
+  [d20180223] [money] NULL,
+  [d20180224] [money] NULL,
+  [d20180225] [money] NULL,
+  [d20180226] [money] NULL,
+  [d20180227] [money] NULL,
+  [d20180228] [money] NULL
+)
+ON [PRIMARY]
+GO

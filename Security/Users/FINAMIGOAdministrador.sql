@@ -1,0 +1,3 @@
+﻿CREATE USER [FINAMIGO\Administrador]
+  WITHOUT LOGIN
+GO

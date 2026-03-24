@@ -1,0 +1,3 @@
+﻿CREATE USER [Israel]
+  WITHOUT LOGIN
+GO

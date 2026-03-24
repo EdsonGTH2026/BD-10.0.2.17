@@ -1,0 +1,176 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+----create procedure pCsACalculoPreBonoDatos @fecha smalldatetime,@codoficina AS varchar(2)
+----as
+----select fecha,codasesor,sucursal,nombrepromotor,puesto,O_CCBM,O_CAM,O_CER7,O_CER60,O_NCre60,A_CCBM,A_CAM,A_CER7,A_CER60,A_NCre60 from tCsRptCACalculoPreBono
+----drop procedure pCsACalculoPreBonoDatos
+----drop procedure pCsACalculoPreBono
+---exec pCsACalculoPreBono '20160427'
+CREATE procedure [dbo].[pCsACalculoPreBono] @fecha smalldatetime
+as
+----Declare @fecha smalldatetime
+----set @fecha='20160406'
+
+--IF  EXISTS (select 1 from dbo.sysobjects WHERE id = OBJECT_ID(N'[tCsRptCACalculoPreBono]')) -- -- AND type = 'D')             --SELECT * FROM tCsRptCAMesa
+--BEGIN
+--     DROP TABLE tCsRptCACalculoPreBono
+--END
+
+--create table #pro(
+--	sucursal	varchar(250),
+--	codasesor varchar(25),
+--	nombrepromotor varchar(250),
+--	puesto varchar(250),
+--	estado bit,
+--	O_CCBM money default(0),
+--	O_CAM money default(0),
+--	O_CER7 money default(0),
+--	O_CER60 money default(0),
+--	O_NCre60 int default(0),
+--	O_SaldoPriPro7 money default(0),
+--	O_SaldoPriPro60 money default(0),
+--	A_CCBM money default(0),
+--	A_CAM money default(0),
+--	A_CER7 money default(0),
+--	A_CER60 money default(0),
+--	A_NCre60 int default(0),
+--	nro60 int default(0),
+--	saldo60 money default(0),
+--	nro7a59 int default(0),
+--	saldo7a59 money default(0),
+--	nro1a6 int default(0),
+--	saldo1a6 money default(0)
+
+--)
+
+--insert into #pro (codasesor, nombrepromotor,puesto,sucursal,estado)
+--SELECT distinct c.codasesor,cl.nombrecompleto promotor,pu.Descripcion,o.nomoficina,isnull(e.estado,0) estado
+--FROM tCsCartera c with(nolock)
+--inner join tcspadronclientes cl with(nolock) on cl.codusuario=c.codasesor
+--left outer join tcsempleados e with(nolock) on e.codusuario=c.codasesor
+--left outer join tcsclpuestos pu with(nolock) on pu.codigo=e.codpuesto
+--inner join tcloficinas o with(nolock) on o.codoficina=c.codoficina
+--where c.fecha=@fecha --and e.estado=1
+----and e.codpuesto not in (64,70,80)
+--and c.codproducto<>167 and c.fechadesembolso>='20140101' 
+--and c.codoficina<100
+
+--update #pro
+--set A_CCBM=c.sn_CCBM,A_CAM=c.sn_CAM,A_CER7=c.CER7,A_CER60=c.CER60,A_NCre60=c.NCre60
+--from #pro p inner join
+--(
+--	SELECT c.codasesor,o.nomoficina sucursal
+--	,sum(case when (c.nrodiasatraso>=0 and c.nrodiasatraso<=29) then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) sn_CCBM
+--	,sum(case when c.nrodiasatraso>=30 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) sn_CAM
+--	,(sum(case when c.nrodiasatraso>=7 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end)/sum(d.saldocapital+d.interesvigente+d.interesvencido))*100 CER7
+--	,(sum(case when c.nrodiasatraso>=60 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end)/sum(d.saldocapital+d.interesvigente+d.interesvencido))*100 CER60
+--	,count(distinct(case when c.nrodiasatraso>=60 then c.codprestamo else null end)) NCre60
+--	FROM tCsCartera c with(nolock)
+--	inner join tcscarteradet d with(nolock) on c.fecha=d.fecha and c.codprestamo=d.codprestamo
+--	inner join tcspadroncarteradet pd with(nolock) on pd.codprestamo=d.codprestamo and pd.codusuario=d.codusuario
+--	inner join tcloficinas o with(nolock) on o.codoficina=c.codoficina
+--	where c.fecha=@fecha and c.fechadesembolso>='20140101' and c.codasesor<>pd.primerasesor
+--	and c.codproducto<>167
+--	and c.codoficina<100
+--	group by c.codasesor,o.nomoficina
+
+--) c on p.codasesor=c.codasesor and p.sucursal=c.sucursal
+
+--update #pro
+--set O_CCBM=c.sn_CCBM,O_CAM=c.sn_CAM,O_CER7=c.CER7,O_CER60=c.CER60,O_NCre60=c.NCre60,O_SaldoPriPro7=c.SaldoPriPro7,O_SaldoPriPro60=c.SaldoPriPro60
+--from #pro p inner join
+--(
+--	SELECT pd.primerasesor codasesor,o.nomoficina sucursal
+--	,sum(case when c.nrodiasatraso>=0 and c.nrodiasatraso<=29 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) sn_CCBM
+--	,sum(case when c.nrodiasatraso>=30 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) sn_CAM
+--	,(sum(case when c.nrodiasatraso>=7 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end)/sum(d.saldocapital+d.interesvigente+d.interesvencido))*100 CER7
+--	,(sum(case when c.nrodiasatraso>=60 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end)/sum(d.saldocapital+d.interesvigente+d.interesvencido))*100 CER60
+--	,count(distinct(case when c.nrodiasatraso>=60 then c.codprestamo else null end)) NCre60
+--	,sum(case when c.nrodiasatraso>=7 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) SaldoPriPro7
+--	,sum(case when c.nrodiasatraso>=60 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) SaldoPriPro60
+--	FROM tCsCartera c with(nolock)
+--	inner join tcscarteradet d with(nolock) on c.fecha=d.fecha and c.codprestamo=d.codprestamo
+--	inner join tcspadroncarteradet pd with(nolock) on pd.codprestamo=d.codprestamo and pd.codusuario=d.codusuario
+--	inner join tcloficinas o with(nolock) on o.codoficina=c.codoficina
+--	where c.fecha=@fecha and fechadesembolso>='20140101' --and c.codasesor=pd.primerasesor
+--	and c.codproducto<>167
+--	and c.codoficina<100
+--	group by pd.primerasesor,o.nomoficina
+--) c on p.codasesor=c.codasesor and p.sucursal=c.sucursal
+
+--insert into #pro (sucursal,codasesor,nombrepromotor,puesto,estado,O_CCBM,O_CAM,O_NCre60,O_CER7,O_CER60,A_CCBM,A_CAM)
+--select a.sucursal,codasesor,nombrepromotor,puesto,estado,O_CCBM,O_CAM,O_NCre60,(O_SaldoPriPro7/b.saldoneto)*100 CER7,(O_SaldoPriPro60/b.saldoneto)*100 CER60,A_CCBM,A_CAM
+--from (
+--	--select 	sucursal,'HHHHHH'codasesor,'Huerfano' nombrepromotor,'Promotor' puesto,1 estado,sum(O_CCBM) O_CCBM,sum(O_CAM) O_CAM
+--	----,O_CER7,O_CER60
+--	--,sum(O_NCre60) O_NCre60,sum(O_SaldoPriPro7) O_SaldoPriPro7,sum(O_SaldoPriPro60) O_SaldoPriPro60,sum(A_CCBM) A_CCBM
+--	--from #pro p
+--	--where estado=0
+--	--group by sucursal
+--	--union
+--	--select 	sucursal,'HHHHHH'codasesor,'Huerfano' nombrepromotor,'Promotor' puesto,1 estado,sum(O_CCBM) O_CCBM,sum(O_CAM) O_CAM
+--	----,O_CER7,O_CER60
+--	--,sum(O_NCre60) O_NCre60,sum(O_SaldoPriPro7) O_SaldoPriPro7,sum(O_SaldoPriPro60) O_SaldoPriPro60,sum(A_CCBM) A_CCBM
+--	--from #pro p
+--	--where estado=1 and puesto in('Lider Sucursal','Gestor de Cobranza','Especialista')
+--	--group by sucursal
+--	select sucursal,codasesor,nombrepromotor,puesto,estado,sum(O_CCBM) O_CCBM,sum(O_CAM) O_CAM
+--	,sum(O_NCre60) O_NCre60,sum(O_SaldoPriPro7) O_SaldoPriPro7,sum(O_SaldoPriPro60) O_SaldoPriPro60,sum(A_CCBM) A_CCBM,sum(A_CAM) A_CAM
+--	from(
+--		select 	sucursal,'HHHHHH'codasesor,'Huerfano' nombrepromotor,'Promotor' puesto,1 estado,O_CCBM,O_CAM,O_NCre60,O_SaldoPriPro7,O_SaldoPriPro60,A_CCBM,A_CAM
+--		from #pro p
+--		where estado=0
+--		--and sucursal='ACAYUCAN'
+--		union
+--		select 	sucursal,'HHHHHH'codasesor,'Huerfano' nombrepromotor,'Promotor' puesto,1 estado,O_CCBM,O_CAM,O_NCre60,O_SaldoPriPro7,O_SaldoPriPro60,A_CCBM,A_CAM
+--		from #pro p
+--		where estado=1 and puesto in('Lider Sucursal','Gestor de Cobranza','Especialista')
+--		--and sucursal='ACAYUCAN'
+--	) xx
+--	group by sucursal,codasesor,nombrepromotor,puesto,estado
+--) a
+--inner join (
+--	SELECT o.nomoficina sucursal,sum(d.saldocapital+d.interesvigente+d.interesvencido) saldoneto
+--	FROM tCsCartera c with(nolock)
+--	inner join tcscarteradet d with(nolock) on c.fecha=d.fecha and c.codprestamo=d.codprestamo
+--	inner join tcloficinas o with(nolock) on o.codoficina=c.codoficina
+--	where c.fecha=@fecha and c.fechadesembolso>='20140101'
+--	group by o.nomoficina
+--) b on a.sucursal=b.sucursal
+--where (O_CCBM<>0 or O_CAM<>0 or A_CCBM<>0 or A_CAM<>0)
+----where O_CCBM=0 and O_CAM=0
+----and a.sucursal='ACAYUCAN'
+
+--delete #pro where estado=0
+--delete #pro where estado=1 and puesto in('Lider Sucursal','Gestor de Cobranza','Especialista')
+
+--update #pro
+--set nro60=c.nro60,saldo60=c.saldo60,nro7a59=c.nro7a59,saldo7a59=c.saldo7a59,nro1a6=c.nro1a6,saldo1a6=c.saldo1a6
+--from #pro p
+--inner join (
+--	SELECT pd.primerasesor codasesor,o.nomoficina sucursal
+--	,count(distinct case when c.nrodiasatraso>=60 then c.codprestamo else null end) nro60
+--	,sum(case when c.nrodiasatraso>=60 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) saldo60
+--	,count(distinct case when  c.nrodiasatraso>=7 and c.nrodiasatraso<60 then c.codprestamo else null end) nro7a59
+--	,sum(case when  c.nrodiasatraso>=7 and c.nrodiasatraso<60 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) saldo7a59
+--	,count(distinct case when c.nrodiasatraso>=1 and c.nrodiasatraso<=6 then c.codprestamo else null end) nro1a6
+--	,sum(case when  c.nrodiasatraso>=1 and c.nrodiasatraso<=6 then d.saldocapital+d.interesvigente+d.interesvencido else 0 end) saldo1a6
+--	FROM tCsCartera c with(nolock)
+--	inner join tcscarteradet d with(nolock) on c.fecha=d.fecha and c.codprestamo=d.codprestamo
+--	inner join tcspadroncarteradet pd with(nolock) on pd.codprestamo=d.codprestamo and pd.codusuario=d.codusuario
+--	inner join tcloficinas o with(nolock) on o.codoficina=c.codoficina
+--	where c.fecha=@fecha 
+--	and c.fechadesembolso>='20140101' --and c.codasesor<>pd.primerasesor
+--	and c.codproducto<>167
+--	and c.codoficina<100
+--	group by pd.primerasesor,o.nomoficina
+--) c on p.codasesor=c.codasesor and p.sucursal=c.sucursal
+
+--select @fecha fecha,codasesor,sucursal,nombrepromotor,puesto,O_CCBM,O_CAM,O_CER7,O_CER60,O_NCre60,A_CCBM,A_CAM,A_CER7,A_CER60,A_NCre60
+--,nro60,saldo60,nro7a59,saldo7a59,nro1a6,saldo1a6
+--into tCsRptCACalculoPreBono
+--from #pro
+--where sucursal<>'ADMINISTRATIVA'
+
+--drop table #pro
+GO

@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[tCsACarteraMovimiento] (
+  [fecini] [smalldatetime] NULL,
+  [fecfin] [smalldatetime] NULL,
+  [sucursal] [varchar](30) NULL,
+  [region] [varchar](50) NULL,
+  [codprestamo] [varchar](25) NOT NULL,
+  [estadoinicial] [varchar](50) NULL,
+  [estadofechacorte] [varchar](50) NULL,
+  [estadoactual] [varchar](20) NULL,
+  [cancelacion] [smalldatetime] NULL,
+  [monto] [decimal](18, 4) NULL,
+  [desembolso] [smalldatetime] NULL,
+  [cosecha] [varchar](10) NULL,
+  [nrodiasatraso_ini] [int] NULL,
+  [nrodiasatraso_fin] [int] NULL,
+  [capitalInicial] [decimal](19, 4) NULL,
+  [saldocapitalFin] [money] NULL,
+  [intVigenteFin] [money] NULL,
+  [intVencFin] [money] NULL,
+  [CodFondo] [tinyint] NULL,
+  [SecuenciaCliente] [int] NULL,
+  [cubetaInicial] [varchar](9) NOT NULL,
+  [cubetaFinal] [varchar](9) NOT NULL,
+  [estadoInicialOperativo] [varchar](7) NOT NULL,
+  [estadoFinalOperativo] [varchar](9) NOT NULL,
+  [rangoMonto] [varchar](6) NOT NULL,
+  [rangoCiclo] [varchar](4) NOT NULL,
+  [calificacion] [varchar](10) NULL,
+  [calificapromotor] [varchar](4) NULL,
+  [calificacioncapacidadpago] [varchar](4) NULL
+)
+ON [PRIMARY]
+GO

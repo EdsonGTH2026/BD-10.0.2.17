@@ -1,0 +1,3 @@
+﻿CREATE USER [Int_dreyesg]
+  WITHOUT LOGIN
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [rie_rgonzalezc]
+  WITHOUT LOGIN
+GO

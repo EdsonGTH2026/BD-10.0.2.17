@@ -1,0 +1,24 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE procedure [dbo].[pXaCaIncentivosGR_vs2] @codoficina varchar(3)
+as
+	set nocount on
+	declare @fecha smalldatetime
+	select @fecha=fechaconsolidacion from vcsfechaconsolidacion
+
+SELECT fecha,DiaCorte,region,nomoficina,codoficina,tiposucursal,saldo0a30Ini,saldo31a89Ini,saldo90Ini,saldocapIni,saldo0a30Fin,saldo31a89Fin,saldo90Fin,saldocapFinal,crecimiento0a30,crecimiento31a89
+,crecimiento90,crecimientoTotal,metacrecimiento,porAlcance,estadoAlcance,Imor16Ini,Imor30Ini,Imor90Ini,Imor16,Imor30,Imor90,descripImor16,descripImor30,descripImor90,capProgra1,capProgra2,capProgra3a4
+,capProgra5,CapProgramadoTotal,capPagado1,capPagado2,capPagado3a4,capPagado5,CapPagadoTotal,porCobranzaC1,porCobranzaC2,porCobranzaC3a4,porCobranzaC5,porCobranzaTotal,moRenovAnt,moReact,moRenov,moNuevo
+,moTotal,RenovPtmos,ReAnticipaPtmos,ReactivaPtmos,nuevosPtmos,totaPtmos,promRenovColoca,promRAnticipaColoca,promReactivaColoca,promNuevoColoca,promTotalColoca,porRenov,porRAnticipa,porReactiva,porNuevo
+,porTotal,ptmosAnticipadasU,montoAnticipadasU,montPendReactivacionU,nroPendReactivacionU,montoRenovaU,ptmosRenovaPendU,montoTotalU,ptmosTotalU,sal1a7ini,sal8a15ini,sal16a30ini,sal31ini,salTotalini,ptmos1a7ini
+,ptmos8a15ini,ptmos16a30ini,ptmos31ini,ptmosTotalini,sal1a7fin,sal8a15fin,sal16a30fin,sal31fin,salTotalfin,ptmos1a7fin,ptmos8a15fin,ptmos16a30fin,ptmos31fin,ptmosTotalfin,varSaldo1a7,varSaldo8a15,varSaldo16a30
+,varSaldo31,varSaldoTotal,varPtmos1a7,varPtmos8a15,varPtmos16a30,varPtmos131,varPtmosTotal,MontoRenov,ptmosRenov,montoLiqui,ptmsLiqui,montoSinRenovacion,nroSinRenovar,promLiquida,promRenovacion,porRenovmonto
+,porRenovptmos,cosecha1,colocacionC1,porRecuperaC1,Deterioro0a15C1,Deterioro16C1,cosecha2,colocacionC2,porRecuperaC2,Deterioro0a15C2,Deterioro16C2,cosecha3,colocacionC3,porRecuperaC3,Deterioro0a15C3,Deterioro16C3
+,cosecha4,colocacionC4,porRecuperaC4,Deterioro0a15C4,Deterioro16C4,cosecha5,colocacionC5,porRecuperaC5,Deterioro0a15C5,Deterioro16C5,cosecha6,colocacionC6,porRecuperaC6,Deterioro0a15C6,Deterioro16C6,cosecha7
+,colocacionC7,porRecuperaC7,Deterioro0a15C7,Deterioro16C7,cosecha8,colocacionC8,porRecuperaC8,Deterioro0a15C8,Deterioro16C8,cosecha9,colocacionC9,porRecuperaC9,Deterioro0a15C9,Deterioro16C9,cosecha10
+,colocacionC10,porRecuperaC10,Deterioro0a15C10,Deterioro16C10,cosecha11,colocacionC11,porRecuperaC11,Deterioro0a15C11,Deterioro16C11,cosecha12,colocacionC12,porRecuperaC12,Deterioro0a15C12,Deterioro16C12
+,cartePromPromotor,nota,mes0a3,mes3a6,mes6a9,mes9a12,mes12,promotoresTotal,vacante
+  FROM [FNMGConsolidado].[dbo].[tCaCartaGerente] with(nolock)
+	where fecha=@fecha--'20201018'--
+	and codoficina=@codoficina--'ACA890202FH300'
+GO

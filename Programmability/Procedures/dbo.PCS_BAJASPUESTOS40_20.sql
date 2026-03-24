@@ -1,0 +1,33 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+  --2023.12.21 se agrega bajas de promotores. solicitado por Mauricio.    
+  --2024.06.24 se agregan mas puestos . solicitado por Marco- auditoria
+  
+CREATE PROCEDURE [dbo].[PCS_BAJASPUESTOS40_20] @FECHA SMALLDATETIME      
+AS      
+SET NOCOUNT ON              
+BEGIN      
+      
+--DECLARE @FECHA SMALLDATETIME      
+----SELECT @FECHA=FECHACONSOLIDACION FROM VCSFECHACONSOLIDACION         
+--SET @FECHA='20251226'      
+     
+DECLARE @FECHAINI  SMALLDATETIME      
+SET @FECHAINI = dbo.fdufechaaperiodo(@fecha)+'01'    
+    
+      
+SELECT O.NOMOFICINA SUCURSAL,INGRESO,SALIDA,PATERNO,MATERNO,NOMBRES,P.DESCRIPCION PUESTO,-----E.CODPUESTO,    
+case 
+	when e.CodMBaja = '5' then 'Defuncion'
+	when E.codmbaja in ('1','3') then 'Renuncia' else  'Despido' end as  'TIPO DE SALIDA'    
+FROM TCSEMPLEADOS E WITH(NOLOCK)      
+INNER JOIN TCSCLPUESTOS P WITH(NOLOCK) ON P.CODIGO=E.CODPUESTO      
+INNER JOIN TCLOFICINAS O WITH(NOLOCK) ON O.CODOFICINA=E.CODOFICINANOM      
+WHERE E.ESTADO=0 AND SALIDA>=@FECHAINI AND SALIDA<=@FECHA      
+--AND E.CODPUESTO IN(41,20,42,66) 
+--AND E.CODPUESTO IN(41,20,42,66,64,16,68,102)     
+ORDER BY SALIDA DESC    
+      
+     
+END      
+GO

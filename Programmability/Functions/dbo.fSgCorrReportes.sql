@@ -1,0 +1,12 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS OFF
+GO
+
+CREATE FUNCTION [dbo].[fSgCorrReportes]()
+RETURNS INT  AS  
+BEGIN 
+
+RETURN (SELECT ISNULL(MAX(CodReporte) + 1, 1) AS Ultimo FROM  tSgReportes)
+
+END
+
+GO

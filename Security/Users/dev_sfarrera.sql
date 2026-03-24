@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_sfarrera]
+  WITHOUT LOGIN
+GO

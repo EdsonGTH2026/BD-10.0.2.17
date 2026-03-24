@@ -1,0 +1,3 @@
+﻿CREATE USER [jrubfiartv]
+  WITHOUT LOGIN
+GO

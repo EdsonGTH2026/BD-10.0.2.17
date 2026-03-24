@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[tCsACaSaldosCubPromotor] (
+  [fecha] [smalldatetime] NOT NULL,
+  [sucursal] [varchar](100) NULL,
+  [promotor] [varchar](300) NULL,
+  [nroptmo] [int] NULL,
+  [saldocapital] [money] NULL,
+  [D0nroptmo] [int] NULL,
+  [D0saldo] [money] NULL,
+  [D0Por] [money] NULL,
+  [D1a7nroptmo] [int] NULL,
+  [D1a7saldo] [money] NULL,
+  [D1a7Por] [money] NULL,
+  [D8a15nroptmo] [int] NULL,
+  [D8a15saldo] [money] NULL,
+  [D8a15Por] [money] NULL,
+  [D16a30nroptmo] [int] NULL,
+  [D16a30saldo] [money] NULL,
+  [D16a30Por] [money] NULL,
+  [D31a60nroptmo] [int] NULL,
+  [D31a60saldo] [money] NULL,
+  [D31a60Por] [money] NULL,
+  [D61a89nroptmo] [int] NULL,
+  [D61a89saldo] [money] NULL,
+  [D61a89Por] [money] NULL,
+  [D90a239nroptmo] [int] NULL,
+  [D90a239saldo] [money] NULL,
+  [D90a239Por] [money] NULL,
+  [Dm240nroptmo] [int] NULL,
+  [Dm240saldo] [money] NULL,
+  [Dm240Por] [money] NULL
+)
+ON [PRIMARY]
+GO

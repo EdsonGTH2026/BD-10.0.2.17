@@ -1,0 +1,3 @@
+﻿CREATE USER [ope_dalvarador]
+  WITHOUT LOGIN
+GO

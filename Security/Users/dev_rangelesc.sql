@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_rangelesc]
+  WITHOUT LOGIN
+GO

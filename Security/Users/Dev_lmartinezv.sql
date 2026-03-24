@@ -1,0 +1,3 @@
+﻿CREATE USER [Dev_lmartinezv]
+  WITHOUT LOGIN
+GO

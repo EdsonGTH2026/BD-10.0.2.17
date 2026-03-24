@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[tCsACrecimientoPromotor_310821] (
+  [fecha] [smalldatetime] NULL,
+  [codoficina] [varchar](4) NULL,
+  [sucursal] [varchar](200) NULL,
+  [region] [varchar](200) NULL,
+  [promotor] [varchar](200) NULL,
+  [ini_nro] [int] NULL,
+  [ini_monto] [money] NULL,
+  [fin_nro] [int] NULL,
+  [fin_monto] [money] NULL,
+  [ini_venc_nro] [int] NOT NULL,
+  [ini_venc_monto] [decimal](38, 4) NOT NULL,
+  [fin_venc_nro] [int] NOT NULL,
+  [fin_venc_monto] [decimal](38, 4) NOT NULL,
+  [qui_nro_can] [int] NOT NULL,
+  [qui_monto_can] [decimal](38, 4) NOT NULL,
+  [qui_nro_qui] [int] NOT NULL,
+  [qui_monto_qui] [decimal](38, 4) NOT NULL,
+  [asi_nro_des] [int] NOT NULL,
+  [asi_monto_des] [decimal](38, 4) NOT NULL,
+  [asi_nro_asi] [int] NOT NULL,
+  [asi_monto_asi] [decimal](38, 4) NOT NULL,
+  [ven_nro] [int] NOT NULL,
+  [ven_monto] [decimal](38, 4) NOT NULL,
+  [crecimiento] [decimal](38, 4) NULL,
+  [MoraIni] [decimal](38, 6) NULL,
+  [MoraFin] [decimal](38, 6) NULL,
+  [codpromotor] [varchar](15) NULL,
+  [ini_mora16] [decimal](38, 6) NULL,
+  [fin_mora16] [decimal](38, 6) NULL
+)
+ON [PRIMARY]
+GO

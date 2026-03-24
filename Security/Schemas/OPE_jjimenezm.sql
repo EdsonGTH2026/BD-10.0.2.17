@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [OPE_jjimenezm]
+GO

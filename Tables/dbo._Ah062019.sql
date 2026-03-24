@@ -1,0 +1,48 @@
+﻿CREATE TABLE [dbo].[_Ah062019] (
+  [tipo] [varchar](6) NOT NULL,
+  [NumIdentifica] [varchar](15) NULL,
+  [Sucursal] [varchar](30) NULL,
+  [TipoPersona] [varchar](6) NOT NULL,
+  [NumCuenta] [varchar](37) NULL,
+  [nombres] [varchar](300) NULL,
+  [paterno] [varchar](50) NULL,
+  [materno] [varchar](50) NULL,
+  [Genero] [bit] NULL,
+  [uscurp] [varchar](20) NULL,
+  [usrfcbd] [varchar](20) NULL,
+  [Municipio] [varchar](60) NULL,
+  [Estado] [varchar](60) NULL,
+  [NACIONALIDAD] [varchar](4) NULL,
+  [PaisDomicilio] [varchar](6) NOT NULL,
+  [Número de certificados de aportación ordinarios] [int] NOT NULL,
+  [Monto del certificado de aportación ordinario] [int] NOT NULL,
+  [Número de certificados excedente o voluntario] [int] NOT NULL,
+  [Monto del certificado excedente o voluntario] [int] NOT NULL,
+  [NumContrato] [varchar](37) NULL,
+  [SucursalOperaDepo] [varchar](30) NULL,
+  [FechaContrato] [datetime] NULL,
+  [TipoProducto] [varchar](5) NOT NULL,
+  [Tipo de modalidad] [varchar](2) NOT NULL,
+  [tasainteres] [money] NULL,
+  [Moneda] [varchar](15) NOT NULL,
+  [Plazo] [numeric](10) NULL,
+  [FechaVencimiento] [varchar](50) NULL,
+  [PlazoxVencer] [int] NULL,
+  [SaldoBruto] [money] NULL,
+  [intacumulado] [money] NULL,
+  [SaldoInicioPeriodo] [money] NULL,
+  [Montodepósito] [money] NOT NULL,
+  [Montoretiro] [money] NOT NULL,
+  [InteresDevengado] [money] NULL,
+  [SaldoFinalPeriodo] [money] NULL,
+  [FechaUltimoMovi] [datetime] NULL,
+  [Tipo de apertura de cuenta] [varchar](2) NOT NULL,
+  [idestadocta] [char](2) NULL,
+  [Capitaliza] [money] NULL,
+  [ISR] [money] NULL
+)
+ON [PRIMARY]
+GO
+
+GRANT SELECT ON [dbo].[_Ah062019] TO [marista]
+GO

@@ -1,0 +1,9 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[pCaGetWSLinkToDownloadFromS3v2] (@Sistema VARCHAR(5))
+AS
+SET NOCOUNT ON 
+BEGIN
+	EXEC [10.0.2.14].[Finmas].[dbo].[pCaGetWSLinkToDownloadFromS3v2] @Sistema
+END
+GO

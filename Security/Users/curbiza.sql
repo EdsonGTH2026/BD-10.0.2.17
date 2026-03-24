@@ -1,0 +1,3 @@
+﻿CREATE USER [curbiza]
+  WITHOUT LOGIN
+GO

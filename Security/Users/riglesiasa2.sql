@@ -1,0 +1,3 @@
+﻿CREATE USER [riglesiasa2]
+  WITHOUT LOGIN
+GO

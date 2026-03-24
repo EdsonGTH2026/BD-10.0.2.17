@@ -1,0 +1,10 @@
+﻿SET QUOTED_IDENTIFIER ON
+
+SET ANSI_NULLS OFF
+GO
+CREATE FUNCTION [dbo].[fSgCorrPDSol] ()  
+RETURNS bigint AS  
+BEGIN 
+return ( SELECT ISNULL(MAX(IdSolicitud), 0) + 1 AS ult FROM tPDSolicitud) 
+END
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [rie_jaguilar]
+  WITHOUT LOGIN
+GO

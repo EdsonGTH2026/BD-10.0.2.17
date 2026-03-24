@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [sa_gcp]
+GO

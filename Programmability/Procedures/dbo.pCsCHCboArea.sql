@@ -1,0 +1,7 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[pCsCHCboArea] AS  
+SELECT idArea, Nombre Area
+  FROM tCsClAreaDep  
+ORDER BY idArea
+GO

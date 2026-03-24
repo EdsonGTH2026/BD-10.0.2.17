@@ -1,0 +1,3 @@
+﻿CREATE USER [Rie_jaguilarr]
+  WITHOUT LOGIN
+GO

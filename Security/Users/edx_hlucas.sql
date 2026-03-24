@@ -1,0 +1,3 @@
+﻿CREATE USER [edx_hlucas]
+  WITHOUT LOGIN
+GO

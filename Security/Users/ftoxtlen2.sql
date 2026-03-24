@@ -1,0 +1,3 @@
+﻿CREATE USER [ftoxtlen2]
+  WITHOUT LOGIN
+GO

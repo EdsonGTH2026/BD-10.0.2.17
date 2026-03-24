@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [ftoxtlen2]
+GO

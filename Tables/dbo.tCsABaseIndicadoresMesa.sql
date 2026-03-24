@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[tCsABaseIndicadoresMesa] (
+  [codsolicitud] [varchar](15) NOT NULL,
+  [codoficina] [varchar](4) NOT NULL,
+  [codproducto] [char](3) NOT NULL,
+  [codestadoactual] [int] NULL,
+  [estadoactual] [varchar](22) NOT NULL,
+  [fechahora] [datetime] NULL,
+  [fondeador] [varchar](20) NULL,
+  [tipooperacion] [varchar](20) NULL,
+  [codusuariomesarevision] [varchar](20) NULL,
+  [FechaAsignacionUsuarioMesa] [datetime] NULL,
+  [nombremesarevision] [varchar](120) NULL,
+  [codusuariocredito] [varchar](20) NULL,
+  [FechaAsignacionUsuarioCredito] [datetime] NULL,
+  [nombrecreditorevision] [varchar](120) NULL,
+  [item] [tinyint] NOT NULL,
+  [codestadoflujo] [int] NULL,
+  [estadoflujo] [varchar](22) NOT NULL,
+  [fechahoraflujo] [datetime] NULL,
+  [usuario] [varchar](15) NULL,
+  [usuarioflujo] [varchar](80) NULL,
+  [montosolicitado] [money] NULL,
+  [montoaprobado] [money] NULL,
+  [montodesembolsado] [money] NULL,
+  [codtipoplaz] [char](1) NOT NULL,
+  [cuotas] [int] NOT NULL,
+  [tasainteres] [money] NULL,
+  [fechasolicitud] [smalldatetime] NULL,
+  [sucursal] [varchar](30) NULL,
+  [Cliente] [varchar](250) NULL
+)
+ON [PRIMARY]
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [lrodriguezg]
+  WITHOUT LOGIN
+GO

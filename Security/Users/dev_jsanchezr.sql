@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_jsanchezr]
+  WITHOUT LOGIN
+GO

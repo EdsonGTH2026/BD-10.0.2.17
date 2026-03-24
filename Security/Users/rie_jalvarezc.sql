@@ -1,0 +1,3 @@
+﻿CREATE USER [rie_jalvarezc]
+  WITHOUT LOGIN
+GO

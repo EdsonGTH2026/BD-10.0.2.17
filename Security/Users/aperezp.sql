@@ -1,0 +1,3 @@
+﻿CREATE USER [aperezp]
+  WITHOUT LOGIN
+GO

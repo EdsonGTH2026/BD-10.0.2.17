@@ -1,0 +1,7 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[pCsCHCboPuesto] AS  
+SELECT Codigo, Descripcion Puesto
+  FROM tCsClPuestos  
+ORDER BY Codi
+GO

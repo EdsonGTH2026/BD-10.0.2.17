@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_izapatap]
+  WITHOUT LOGIN
+GO

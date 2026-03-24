@@ -1,0 +1,3 @@
+﻿CREATE USER [ws_gaia_app]
+  WITHOUT LOGIN
+GO

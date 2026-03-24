@@ -1,0 +1,3 @@
+﻿CREATE USER [mchavezs2]
+  WITHOUT LOGIN
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [bmartineza2]
+  WITHOUT LOGIN
+GO

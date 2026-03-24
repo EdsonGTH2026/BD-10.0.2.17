@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_cchavezd]
+  WITHOUT LOGIN
+GO

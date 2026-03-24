@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dev_cchavezd].[tCsADesembolsosCU] (
+  [codoficina] [varchar](4) NULL,
+  [nomoficina] [varchar](200) NULL,
+  [d20231101m] [money] NULL,
+  [d20231101n] [int] NULL,
+  [d20231102m] [money] NULL,
+  [d20231102n] [int] NULL,
+  [d20231103m] [money] NULL,
+  [d20231103n] [int] NULL,
+  [d20231104m] [money] NULL,
+  [d20231104n] [int] NULL,
+  [d20231105m] [money] NULL,
+  [d20231105n] [int] NULL,
+  [d20231106m] [money] NULL,
+  [d20231106n] [int] NULL,
+  [d20231107m] [money] NULL,
+  [d20231107n] [int] NULL,
+  [d20231108m] [money] NULL,
+  [d20231108n] [int] NULL,
+  [d20231109m] [money] NULL,
+  [d20231109n] [int] NULL,
+  [d20231110m] [money] NULL,
+  [d20231110n] [int] NULL,
+  [d20231111m] [money] NULL,
+  [d20231111n] [int] NULL,
+  [d20231112m] [money] NULL,
+  [d20231112n] [int] NULL,
+  [d20231113m] [money] NULL,
+  [d20231113n] [int] NULL
+)
+ON [PRIMARY]
+GO

@@ -1,0 +1,106 @@
+﻿CREATE TABLE [dev_cchavezd].[PruebaSegui0452] (
+  [codprestamo] [varchar](25) NOT NULL,
+  [periodo] [varchar](10) NULL,
+  [Reporte] [varchar](3) NOT NULL,
+  [xIDENTIFICADOR DEL CRÉDITO ASIGNADO METODOLOGÍA CNBV] [varchar](50) NULL,
+  [NumeroDisposicion] [int] NOT NULL,
+  [ClasificacionContable] [varchar](12) NOT NULL,
+  [FechaCorte] [varchar](50) NULL,
+  [SaldoIndolutoInicialFC] [decimal](16, 2) NULL,
+  [MontoDispuestoFC] [varchar](16) NULL,
+  [MontoIntOrdinariosFC] [decimal](16, 2) NULL,
+  [MontoIntMoratoriosFC] [decimal](16, 2) NULL,
+  [MontoComisionesFC] [int] NOT NULL,
+  [MontoIVAFC] [decimal](16, 2) NULL,
+  [MontoPaExCapFC] [decimal](16, 2) NULL,
+  [MontoPaExIntFC] [decimal](16, 2) NULL,
+  [MontoPaExComFC] [decimal](16, 2) NULL,
+  [MontoCapPagadoFC] [decimal](16, 2) NULL,
+  [MontoIntPagadoFC] [decimal](16, 2) NULL,
+  [MontoMorPagadoFC] [decimal](16, 2) NULL,
+  [MontoComPagadoFC] [decimal](16, 2) NULL,
+  [MontoOtrosAccPagadoFC] [decimal](16, 2) NULL,
+  [TasaOrdAnualFC] [varchar](16) NULL,
+  [TasaMorAnualFC] [varchar](16) NULL,
+  [SaldoIndolutoFC] [decimal](16, 2) NULL,
+  [FechaUltDisposicion] [varchar](50) NULL,
+  [PlazoVctoLineaCredOri] [int] NULL,
+  [SaldoPrinInicioPeriodo] [decimal](16, 2) NULL,
+  [MontoDispuestoLineaCredIniMes] [varchar](16) NULL,
+  [CreditoDisponibleLineaCred] [int] NOT NULL,
+  [TasaOrdPeriodo] [varchar](16) NULL,
+  [TasaMorPeriodo] [varchar](16) NULL,
+  [MontoIntOrdPeriodo] [decimal](16, 2) NOT NULL,
+  [MontoIntMorPeriodo] [decimal](16, 2) NOT NULL,
+  [MontoIntRefinRecaPeriodo] [int] NOT NULL,
+  [MontoIntReversoCobrosPeriodo] [int] NOT NULL,
+  [SaldoBaseCalcIntPeriodo] [decimal](16, 2) NULL,
+  [NumDiasUtilizaCalcIntPeriodo] [int] NOT NULL,
+  [ComisionesPeriodo] [int] NOT NULL,
+  [MontoCondonaPeriodo] [varchar](16) NULL,
+  [MontoQuitaCastigoPeriodo] [varchar](16) NULL,
+  [MontoBonoEFPeriodo] [int] NOT NULL,
+  [MontoRecDescuentoPeriodo] [int] NOT NULL,
+  [MontoAumeDecrPrincipalPeriodo] [int] NOT NULL,
+  [MontoCapPagadoPeriodo] [decimal](16, 2) NULL,
+  [MontoIntPagadoPeriodo] [decimal](16, 2) NULL,
+  [MontoMorPagadoPeriodo] [decimal](16, 2) NULL,
+  [MontoComPagadoPeriodo] [decimal](16, 2) NULL,
+  [MontoOtrosAccPagadoPeriodo] [decimal](16, 2) NULL,
+  [MontoTotalPagadoPeriodo] [decimal](20, 2) NULL,
+  [SaldoPrincipalFinalPeriodo] [decimal](16, 2) NULL,
+  [SaldoInsolutoFinalPeriodo] [decimal](16, 2) NULL,
+  [SituacionCredito] [int] NOT NULL,
+  [TipoRecuperacion] [int] NOT NULL,
+  [NumeroDiasMora] [int] NULL,
+  [FechaUltPagoCompleto] [varchar](50) NULL,
+  [MontoUltPagoCompleto] [decimal](16, 2) NULL,
+  [FechaPrimeraAmorNoCubierta] [varchar](50) NOT NULL,
+  [TipoGarantia] [int] NOT NULL,
+  [NumeroGarantias] [int] NOT NULL,
+  [ProgramaCredGobiernoFederal] [int] NOT NULL,
+  [MontoGarantia] [decimal](16, 2) NULL,
+  [PorcentajeReprGarantiaSaldoInsoluto] [varchar](16) NULL,
+  [GradoPrelacionGarantia] [int] NOT NULL,
+  [FechaValuacionGarantia] [varchar](50) NULL,
+  [NumeroAvales] [int] NOT NULL,
+  [PorcentajeGarantizaAval] [varchar](16) NULL,
+  [NombreAval] [varchar](200) NOT NULL,
+  [RFCaval] [varchar](13) NOT NULL,
+  [TipoCarteraCalifica] [int] NOT NULL,
+  [CalificaCubierta] [varchar](10) NOT NULL,
+  [Calificaexpuesta] [varchar](10) NOT NULL,
+  [ZonaMarginada] [int] NOT NULL,
+  [ClavePrevencion] [int] NULL,
+  [FuenteFondeo] [int] NOT NULL,
+  [PorceEPMontoCubierto] [varchar](16) NULL,
+  [MontoCreditoCubierto] [varchar](16) NULL,
+  [MontoEPCubierto] [varchar](16) NULL,
+  [PorceEPMontoExpuesto] [varchar](16) NULL,
+  [MontoCreditoExpuesto] [varchar](16) NULL,
+  [MontoEPExpuesto] [varchar](16) NULL,
+  [MontoEPTotalesCalifica] [varchar](16) NULL,
+  [MontoEPadicionalRO] [varchar](4) NOT NULL,
+  [MontoEPadicionalIntDevNoCobradosVencidos(Balance)] [varchar](16) NULL,
+  [MontoEPadicionalCNBV] [varchar](4) NOT NULL,
+  [MontoEPadicionalTotal] [varchar](16) NULL,
+  [MontoEPadicionalIntDevNoCobradosVencidos(CtaOrden)] [varchar](4) NOT NULL,
+  [EPTotalesDerivadasCalificaMesInmediatoAnterior] [varchar](16) NULL
+)
+ON [PRIMARY]
+GO
+
+GRANT SELECT ON [dev_cchavezd].[PruebaSegui0452] TO [rie_jaguilar]
+GO
+
+GRANT SELECT ON [dev_cchavezd].[PruebaSegui0452] TO [rie_sbravoa]
+GO
+
+GRANT SELECT ON [dev_cchavezd].[PruebaSegui0452] TO [rie_ldomingueze]
+GO
+
+GRANT SELECT ON [dev_cchavezd].[PruebaSegui0452] TO [rie_jalvarezc]
+GO
+
+GRANT SELECT ON [dev_cchavezd].[PruebaSegui0452] TO [rie_blozanob]
+GO

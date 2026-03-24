@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_sfloresc]
+  WITHOUT LOGIN
+GO

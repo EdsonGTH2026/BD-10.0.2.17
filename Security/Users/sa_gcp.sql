@@ -1,0 +1,3 @@
+﻿CREATE USER [sa_gcp]
+  WITHOUT LOGIN
+GO

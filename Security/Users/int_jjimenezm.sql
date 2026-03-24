@@ -1,0 +1,3 @@
+﻿CREATE USER [int_jjimenezm]
+  WITHOUT LOGIN
+GO

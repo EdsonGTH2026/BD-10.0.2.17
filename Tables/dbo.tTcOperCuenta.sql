@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[tTcOperCuenta] (
+  [CodOficina] [varchar](4) NOT NULL,
+  [IdTrans] [int] NOT NULL,
+  [IdCuenta] [int] NOT NULL,
+  [NroOper] [decimal] NOT NULL,
+  [TipoOper] [char](2) NOT NULL,
+  [Monto] [money] NOT NULL,
+  [CodConcepto] [int] NULL,
+  [NroDocumento] [char](10) NULL,
+  [Obs] [varchar](150) NULL,
+  [AnombreDe] [varchar](100) NULL,
+  [Fecha] [datetime] NULL,
+  [FechaAnulacion] [smalldatetime] NULL,
+  [CodEmpresa] [tinyint] NULL,
+  [CodFondo] [varchar](2) NULL,
+  [CodSistema] [char](2) NULL,
+  [CodPrestamo] [varchar](25) NULL,
+  [CodUsuario] [char](15) NULL,
+  [CodUsuarioOpe] [varchar](15) NULL,
+  [CuentaTraspaso] [varchar](30) NULL,
+  [Operacion] [char](4) NULL,
+  [OperConciliada] [bit] NOT NULL,
+  [Estado] [varchar](4) NULL,
+  [SeImprimio] [bit] NOT NULL,
+  [EsOrdenPago] [bit] NULL,
+  [CodFormaTrans] [smallint] NULL,
+  [FechaBoleta] [smalldatetime] NULL,
+  [ReImprime] [bit] NULL,
+  [EsInterRegional] [bit] NULL,
+  [Contabilizado] [bit] NULL
+)
+ON [PRIMARY]
+GO

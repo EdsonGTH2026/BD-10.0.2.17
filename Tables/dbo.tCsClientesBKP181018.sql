@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[tCsClientesBKP181018] (
+  [CodUsuario] [varchar](15) NOT NULL,
+  [LabCodActividad] [varchar](10) NULL,
+  [Actividad] [varchar](50) NULL
+)
+ON [PRIMARY]
+GO

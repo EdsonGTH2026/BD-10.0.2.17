@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_anovoag]
+  WITHOUT LOGIN
+GO

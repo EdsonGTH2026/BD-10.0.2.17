@@ -1,0 +1,3 @@
+﻿CREATE USER [ope_lcoronas]
+  WITHOUT LOGIN
+GO

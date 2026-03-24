@@ -1,0 +1,3 @@
+﻿CREATE USER [jaguirre]
+  WITHOUT LOGIN
+GO

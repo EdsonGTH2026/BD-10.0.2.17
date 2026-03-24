@@ -1,0 +1,3 @@
+﻿CREATE USER [int_mmartinezp]
+  WITHOUT LOGIN
+GO

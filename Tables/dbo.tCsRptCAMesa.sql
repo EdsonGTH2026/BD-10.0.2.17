@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[tCsRptCAMesa] (
+  [region] [varchar](50) NULL,
+  [nrosucursal] [varchar](4) NULL,
+  [sucursal] [varchar](30) NULL,
+  [cliente] [varchar](300) NULL,
+  [promotor1] [varchar](300) NULL,
+  [promotor2] [varchar](300) NULL,
+  [numprestamo] [varchar](25) NOT NULL,
+  [codsolicitud] [varchar](15) NULL,
+  [fechaotorgamiento] [smalldatetime] NULL,
+  [monto] [decimal](18, 4) NULL,
+  [fechavencimiento] [smalldatetime] NULL,
+  [nombreprod] [varchar](50) NOT NULL,
+  [nrodiasatraso] [int] NULL,
+  [tasaintcorriente] [decimal](18, 7) NULL,
+  [plazo] [int] NULL,
+  [periocidad] [char](2) NULL,
+  [deuda] [money] NULL,
+  [estadocalculado] [varchar](20) NULL,
+  [secuenciacliente] [int] NULL,
+  [saldocapital] [money] NOT NULL,
+  [interesvigente] [money] NULL,
+  [interesvencido] [money] NULL,
+  [interesctaorden] [money] NULL,
+  [moratoriovigente] [money] NULL,
+  [moratoriovencido] [money] NULL,
+  [moratorioctaorden] [money] NULL,
+  [impuestos] [money] NULL,
+  [cargomora] [money] NULL,
+  [otroscargos] [money] NOT NULL
+)
+ON [PRIMARY]
+GO

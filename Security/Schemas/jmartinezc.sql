@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [jmartinezc]
+GO

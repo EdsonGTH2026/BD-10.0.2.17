@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[tCsCartera01_CA1222] (
+  [Fecha] [smalldatetime] NOT NULL,
+  [CodPrestamo] [varchar](25) NOT NULL,
+  [CodUsuario] [varchar](50) NOT NULL,
+  [CodOficina] [varchar](4) NOT NULL,
+  [MontoDesembolso] [decimal](19, 4) NULL,
+  [SaldoCapital] [decimal](19, 4) NOT NULL,
+  [SaldoINTE] [decimal](19, 4) NOT NULL,
+  [SaldoINPE] [decimal](19, 4) NOT NULL,
+  [OtrosCargos] [decimal](19, 4) NOT NULL,
+  [Impuestos] [decimal](19, 4) NULL,
+  [FechaUltimoMovimiento] [datetime] NULL,
+  [SaldoEnMora] [decimal](19, 4) NOT NULL,
+  [SaldoCapitalAtrasado] [decimal](19, 4) NOT NULL,
+  [SaldoCapitalVencido] [decimal](19, 4) NOT NULL,
+  [TipoCalificacion] [char](1) NULL,
+  [SaldoINTEVIG] [decimal](19, 4) NOT NULL,
+  [SaldoINPEVIG] [decimal](19, 4) NOT NULL,
+  [SaldoINTESus] [decimal](19, 4) NOT NULL,
+  [SaldoINPESus] [decimal](19, 4) NOT NULL,
+  [SaldoCargoMora] [decimal](19, 4) NOT NULL,
+  [INTEDevDia] [decimal](19, 4) NOT NULL,
+  [INPEDevDia] [decimal](19, 4) NOT NULL,
+  [SecuenciaCliente] [int] NULL,
+  [SecuenciaGrupo] [int] NULL,
+  [CodDestino] [varchar](5) NULL,
+  [CodVerificador] [varchar](15) NULL
+)
+ON [PRIMARY]
+GO

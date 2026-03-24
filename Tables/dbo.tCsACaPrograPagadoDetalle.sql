@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[tCsACaPrograPagadoDetalle] (
+  [fecha] [smalldatetime] NULL,
+  [region] [varchar](50) NULL,
+  [sucursal] [varchar](100) NULL,
+  [Promotor] [varchar](400) NULL,
+  [codprestamo] [char](19) NOT NULL,
+  [cliente] [varchar](400) NULL,
+  [Atraso] [varchar](4) NOT NULL,
+  [saldo] [money] NULL,
+  [condonado] [money] NULL,
+  [programado_n] [int] NULL,
+  [programado_s] [money] NULL,
+  [anticipado] [int] NULL,
+  [puntual] [int] NULL,
+  [atrasado] [int] NULL,
+  [pagado_n] [int] NULL,
+  [pagado_s] [money] NULL,
+  [pagado_por] [int] NOT NULL,
+  [sinpago_n] [int] NULL,
+  [sinpago_s] [money] NULL,
+  [sinpago_por] [int] NOT NULL,
+  [pagoparcial_n] [int] NULL,
+  [pagoparcial_s] [money] NULL,
+  [parcial_por] [int] NOT NULL,
+  [total_n] [int] NOT NULL,
+  [total_s] [int] NOT NULL,
+  [total_por] [int] NOT NULL
+)
+ON [PRIMARY]
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [AppPWClientes]
+  WITHOUT LOGIN
+GO

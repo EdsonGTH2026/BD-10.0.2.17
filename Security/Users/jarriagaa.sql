@@ -1,0 +1,3 @@
+﻿CREATE USER [jarriagaa]
+  WITHOUT LOGIN
+GO

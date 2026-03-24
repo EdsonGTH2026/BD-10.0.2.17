@@ -1,0 +1,3 @@
+﻿CREATE USER [OPE_jjimenezm]
+  WITHOUT LOGIN
+GO

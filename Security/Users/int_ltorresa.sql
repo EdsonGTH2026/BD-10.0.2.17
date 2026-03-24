@@ -1,0 +1,3 @@
+﻿CREATE USER [int_ltorresa]
+  WITHOUT LOGIN
+GO

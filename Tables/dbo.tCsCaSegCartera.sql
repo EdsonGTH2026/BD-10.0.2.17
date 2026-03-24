@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[tCsCaSegCartera] (
+  [CodUsuario] [char](15) NOT NULL,
+  [TipoSeguimiento] [char](1) NOT NULL,
+  [Fecha] [smalldatetime] NOT NULL,
+  [Hora] [datetime] NOT NULL,
+  [Codprestamo] [varchar](25) NULL,
+  [Relacion] [int] NULL,
+  [Nombrecompleto] [varchar](100) NULL,
+  [Resultado] [varchar](500) NULL,
+  [Observacion] [varchar](500) NULL,
+  [CodUsuarioReg] [char](15) NULL,
+  [CodUsuarioSup] [char](15) NULL,
+  [FechaSeg] [smalldatetime] NULL,
+  [FechaCompro] [smalldatetime] NULL,
+  [horacompro] [datetime] NULL,
+  [horaseg] [datetime] NULL,
+  [ObsSupervisor] [varchar](50) NULL,
+  [FechaUltEdicion] [smalldatetime] NULL,
+  [CodOficina] [varchar](4) NULL,
+  [MontoCompro] [decimal](18, 2) NULL,
+  [Prioridad] [char](1) NULL,
+  [Motivo] [char](2) NULL,
+  [TipoContacto] [char](1) NULL,
+  [formapago] [char](2) NULL,
+  [mailase] [bit] NULL CONSTRAINT [DF_tCsCaSegCartera_mailase] DEFAULT (0),
+  [mailger] [bit] NULL CONSTRAINT [DF_tCsCaSegCartera_mailger] DEFAULT (0),
+  [mailreg] [bit] NULL CONSTRAINT [DF_tCsCaSegCartera_mailreg] DEFAULT (0),
+  [mailcor] [bit] NULL CONSTRAINT [DF_tCsCaSegCartera_mailcor] DEFAULT (0),
+  [genorden] [int] NULL CONSTRAINT [DF_tCsCaSegCartera_genorden] DEFAULT (0),
+  CONSTRAINT [PK_tCsCaSegCartera] PRIMARY KEY CLUSTERED ([CodUsuario], [TipoSeguimiento], [Fecha], [Hora])
+)
+ON [PRIMARY]
+GO

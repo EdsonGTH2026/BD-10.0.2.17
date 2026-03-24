@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[_UbigeoSinEquiCAAlta] (
+  [codubigeo] [varchar](6) NULL,
+  [COLONIA DEL DOMICILIO] [varchar](60) NULL,
+  [CÓDIGO POSTAL DEL DOMICILIO] [varchar](10) NULL,
+  [LOCALIDAD DEL DOMICILIO] [varchar](15) NULL,
+  [ESTADO DEL DOMICILIO] [int] NULL,
+  [MUNICIPIO DEL DOMICILIO] [int] NULL
+)
+ON [PRIMARY]
+GO

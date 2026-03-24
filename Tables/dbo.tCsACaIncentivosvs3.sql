@@ -1,0 +1,45 @@
+﻿CREATE TABLE [dbo].[tCsACaIncentivosvs3] (
+  [fecha] [smalldatetime] NULL,
+  [codoficina] [varchar](30) NULL,
+  [codasesor] [varchar](20) NULL,
+  [coordinador] [varchar](250) NULL,
+  [saldocapital] [money] NULL,
+  [categoria] [varchar](15) NULL,
+  [antiguedad] [int] NULL,
+  [BonoObjetivo] [money] NULL,
+  [programado_s] [money] NULL,
+  [pagado_s] [money] NULL,
+  [porpagado_s] [money] NULL,
+  [nivel] [varchar](15) NULL,
+  [saldo0a15] [money] NULL,
+  [saldo16a30] [money] NULL,
+  [saldo31] [money] NULL,
+  [saldoT] [money] NULL,
+  [Imor15] [money] NULL,
+  [Imor1] [money] NULL,
+  [Imor8] [money] NULL,
+  [Imor16] [money] NULL,
+  [Imor30] [money] NULL,
+  [saldo30ini] [money] NULL,
+  [saldo30fin] [money] NULL,
+  [crecimiento] [money] NULL,
+  [nroptmos30ini] [int] NULL,
+  [nroptmos30fin] [int] NULL,
+  [Metacrecimiento] [money] NULL,
+  [Asignacionca] [money] NULL,
+  [Quitaca] [money] NULL,
+  [Alcancecreci] [money] NULL,
+  [nroliquida] [int] NULL,
+  [nrorenova] [int] NULL,
+  [AlcanceRenov] [decimal](38, 2) NULL,
+  [pmerPorcentaje] [money] NULL,
+  [sgdoPorcentaje] [money] NULL,
+  [ayudatrans] [money] NULL,
+  [BonoObtenido] [money] NULL,
+  [bonoFinal] [money] NULL
+)
+ON [PRIMARY]
+GO
+
+GRANT SELECT ON [dbo].[tCsACaIncentivosvs3] TO [mchavezs2]
+GO

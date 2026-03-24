@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_aortizc]
+  WITHOUT LOGIN
+GO

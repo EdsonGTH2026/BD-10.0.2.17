@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_lcruzb]
+  WITHOUT LOGIN
+GO

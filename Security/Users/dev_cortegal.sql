@@ -1,0 +1,3 @@
+﻿CREATE USER [dev_cortegal]
+  WITHOUT LOGIN
+GO

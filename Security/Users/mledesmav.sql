@@ -1,0 +1,3 @@
+﻿CREATE USER [mledesmav]
+  WITHOUT LOGIN
+GO

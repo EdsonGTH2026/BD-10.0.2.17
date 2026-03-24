@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[tCsBovTransac] (
+  [Fecha] [smalldatetime] NOT NULL,
+  [CodOficina] [varchar](4) NOT NULL,
+  [NumBovTrans] [int] NOT NULL,
+  [FechaTrans] [datetime] NULL,
+  [CodMoneda] [varchar](2) NULL,
+  [MontoEntrada] [decimal](19, 4) NULL,
+  [MontoSalida] [decimal](19, 4) NULL,
+  [UsDepositante] [varchar](75) NULL,
+  [UsReceptor] [varchar](75) NULL,
+  [CodMoviDe] [char](3) NULL,
+  [CodMoviA] [char](3) NULL,
+  [Observaciones] [varchar](200) NULL,
+  [NumCaja] [tinyint] NULL,
+  [NumFondoFijo] [int] NULL,
+  [CodUsuarioCFF] [varchar](15) NULL,
+  [CodOficinaTran] [varchar](4) NULL,
+  [CodEntidadTipo] [varchar](3) NULL,
+  [CodEntidad] [varchar](3) NULL,
+  [NroCuenta] [varchar](30) NULL,
+  [Anulada] [bit] NULL,
+  [NumBovTransRef] [int] NULL,
+  [TipoCambio] [decimal](19, 4) NULL,
+  [CodOtros] [char](5) NULL,
+  [CodConceptoBan] [int] NULL,
+  [NroDocumentoBan] [char](10) NULL,
+  CONSTRAINT [PK_tCsBovTransac] PRIMARY KEY CLUSTERED ([Fecha], [CodOficina], [NumBovTrans])
+)
+ON [PRIMARY]
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [ws_miio_batch]
+  WITHOUT LOGIN
+GO

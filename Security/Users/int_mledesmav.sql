@@ -1,0 +1,3 @@
+﻿CREATE USER [int_mledesmav]
+  WITHOUT LOGIN
+GO

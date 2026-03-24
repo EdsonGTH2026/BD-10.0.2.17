@@ -1,0 +1,8 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS OFF
+GO
+CREATE FUNCTION [dbo].[fSgCorrInfoauto] ()
+RETURNS int AS  
+BEGIN 
+return (SELECT ISNULL(MAX(idcola), 0) + 1 FROM tSgCmInfoAuto)
+END
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [agonzalezc]
+  WITHOUT LOGIN
+GO

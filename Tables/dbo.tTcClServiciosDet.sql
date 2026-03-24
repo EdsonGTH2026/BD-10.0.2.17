@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[tTcClServiciosDet] (
+  [CodServicio] [int] NOT NULL,
+  [CodOficina] [varchar](4) NOT NULL,
+  [TipoServicio] [smallint] NOT NULL,
+  [FechaRegistro] [datetime] NULL,
+  [TieneVigencia] [bit] NULL,
+  [VigenciaInicio] [datetime] NULL,
+  [VigenciaFin] [datetime] NULL,
+  [EmiteFactura] [bit] NULL,
+  [EmiteComprobante] [bit] NULL,
+  [NroComprobante] [int] NULL,
+  [EsPreimpreso] [bit] NULL,
+  [RepoComprobante] [varchar](50) NULL,
+  [CodMoneda] [varchar](2) NULL,
+  [EsMontoFijo] [bit] NULL,
+  [MontoFijo] [money] NULL,
+  [MontoEnDetalle] [bit] NULL,
+  [CobraComision] [bit] NULL,
+  [TipoComision] [char](1) NULL,
+  [MontoComision] [money] NULL,
+  [EmiteFacturaComision] [bit] NULL,
+  [RegistroPreliminar] [bit] NULL,
+  [TieneObs] [bit] NULL,
+  [Estado] [varchar](10) NULL,
+  [CobraImpuesto] [bit] NULL,
+  [CodImpuesto] [varchar](8) NULL,
+  [MontoImpuesto] [money] NULL
+)
+ON [PRIMARY]
+GO

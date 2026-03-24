@@ -1,0 +1,3 @@
+﻿CREATE USER [rie_blozanob]
+  WITHOUT LOGIN
+GO

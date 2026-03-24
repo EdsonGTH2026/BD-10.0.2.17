@@ -1,0 +1,3 @@
+﻿CREATE USER [rie_sbravoa]
+  WITHOUT LOGIN
+GO

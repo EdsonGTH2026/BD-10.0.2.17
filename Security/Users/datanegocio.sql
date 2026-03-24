@@ -1,0 +1,3 @@
+﻿CREATE USER [datanegocio]
+  WITHOUT LOGIN
+GO

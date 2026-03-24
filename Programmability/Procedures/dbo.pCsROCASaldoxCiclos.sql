@@ -1,0 +1,74 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+---SP para generar informacion para el reporte Operativo enviado a DG         
+--se optimiza sp 2023.10.16 zccu      
+     
+CREATE Procedure [dbo].[pCsROCASaldoxCiclos]             
+as            
+BEGIN        
+        
+set nocount on          
+declare @fecha smalldatetime        
+set @fecha=(select fechaconsolidacion from vcsfechaconsolidacion)  --'20231014'--      
+        
+--declare @fechas table (fechas smalldatetime)        
+--insert into @fechas         
+--select ultimodia from tclperiodo        
+--where ultimodia>=dateadd(month,-13,@fecha) and ultimodia<=@fecha         
+--union         
+--select @fecha     
+    
+select ultimodia       
+into #dias      
+from tclperiodo with(nolock)        
+where ultimodia>=dateadd(month,-13,@fecha) and ultimodia<=@fecha              
+union select @fecha     
+    
+         
+--- ELIMINAR TODO, MENOS LOS REGISTROS DE LOS 13 MESES ANTERIORES.      
+DELETE FROM FNMGCONSOLIDADO.DBO.TmpROCASaldoxCiclos       
+WHERE fechaperiodo NOT IN (select ultimodia from #dias with(nolock) )      
+  
+  
+UPDATE FNMGCONSOLIDADO.DBO.TmpROCASaldoxCiclos     
+SET FECHA=@fecha  
+FROM FNMGCONSOLIDADO.DBO.TmpROCASaldoxCiclos     
+WHERE fechaperiodo IN (select ultimodia from #dias with(nolock) )    
+     
+  
+      
+-------VALIDAR --- TABLA TEMPORAL / SE BORRA TODA E SE INSERTAN NUEVOS REGISTROS.-- ZCCU        
+DELETE FNMGCONSOLIDADO.DBO.TmpROCASaldoxCiclos WHERE fechaperiodo=@fecha     
+INSERT INTO FNMGCONSOLIDADO.DBO.TmpROCASaldoxCiclos      
+      
+select @fecha fecha,c.fecha fechaPeriodo        
+,case  when pd.secuenciacliente >= 3 then 'Ciclo 3+'        
+   when pd.secuenciacliente in (1, 2)  then 'Ciclo 1-2'        
+   else 'otro'         
+   end rangoCiclo        
+,sum(c.saldocapital) saldoCapitalTOTAL        
+,case when nrodiasatraso>=0 and nrodiasatraso<=30 then 'VIGENTE 0-30'        
+  when nrodiasatraso>=31 and nrodiasatraso<=89 then 'ATRASADO 31-89'        
+  when nrodiasatraso>=90  then 'VENCIDO 90+' end Categoria       
+FROM tcspadroncarteradet pd with(nolock)        
+--left outer join tcscarteradet cd with(nolock) on cd.fecha in(select fechas from @fechas) and cd.codprestamo=pd.codprestamo and cd.codusuario=pd.codusuario        
+left outer join tCsCartera c with(nolock) on PD.codprestamo=c.codprestamo and c.fecha=@fecha      
+--where c.fecha in(select ultimodia from tclperiodo where ultimodia>=dateadd(month,-13,@fecha) and ultimodia<=@fecha         
+--union select @fecha)     
+where c.fecha=@fecha    
+and pd.codprestamo not in (select codprestamo from tCsCarteraAlta with(nolock))        
+and c.codoficina not in('97','230','231','999','98')        
+and cartera='ACTIVA'        
+group by c.fecha,             
+case  when pd.secuenciacliente >= 3 then 'Ciclo 3+'        
+      when pd.secuenciacliente in (1, 2)  then 'Ciclo 1-2'        
+      else 'otro'end         
+,case when nrodiasatraso>=0 and nrodiasatraso<=30 then 'VIGENTE 0-30'        
+      when nrodiasatraso>=31 and nrodiasatraso<=89 then 'ATRASADO 31-89'        
+      when nrodiasatraso>=90  then 'VENCIDO 90+' END        
+order by fecha      
+    
+DROP TABLE #dias      
+        
+END
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [ayescasc]
+  WITHOUT LOGIN
+GO

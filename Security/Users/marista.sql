@@ -1,0 +1,3 @@
+﻿CREATE USER [marista]
+  WITHOUT LOGIN
+GO

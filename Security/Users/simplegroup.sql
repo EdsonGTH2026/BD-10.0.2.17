@@ -1,0 +1,3 @@
+﻿CREATE USER [simplegroup]
+  WITHOUT LOGIN
+GO
