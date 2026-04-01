@@ -21,8 +21,7 @@
   [CSC] [decimal](18, 4) NULL,
   [CMV] [decimal](18, 4) NULL,
   [CMR] [decimal](18, 4) NULL,
-  [CEP] [decimal](18, 4) NULL,
-  CONSTRAINT [PK_tMsePuntaje] PRIMARY KEY CLUSTERED ([Ubicacion], [Inicio], [Fin], [F], [Grupo])
+  [CEP] [decimal](18, 4) NULL
 )
 ON [PRIMARY]
 GO

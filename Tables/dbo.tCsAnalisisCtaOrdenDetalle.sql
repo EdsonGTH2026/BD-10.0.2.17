@@ -19,8 +19,7 @@
   [PagoIM] [decimal](18, 8) NULL,
   [SIMCB] [decimal](18, 8) NULL,
   [SIMCO] [decimal](18, 8) NULL,
-  [Observacion] [varchar](500) NULL,
-  CONSTRAINT [PK_tCsAnalisisCtaOrdenDetalle] PRIMARY KEY CLUSTERED ([Dia], [CorteDataNegocio], [ProcesoFinmas], [CodPrestamo], [CodUsuario], [Cuota], [NroDiasAtraso])
+  [Observacion] [varchar](500) NULL
 )
 ON [PRIMARY]
 GO

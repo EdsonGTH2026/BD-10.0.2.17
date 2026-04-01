@@ -20,8 +20,7 @@
   [Dec1] [decimal](18, 4) NULL,
   [Dec2] [decimal](18, 4) NULL,
   [Dec3] [decimal](18, 4) NULL,
-  [Texto] [varchar](8000) NULL,
-  CONSTRAINT [PK_tCsFirmaReporteDetalle] PRIMARY KEY CLUSTERED ([Firma], [Identificador], [Grupo])
+  [Texto] [varchar](8000) NULL
 )
 ON [PRIMARY]
 GO

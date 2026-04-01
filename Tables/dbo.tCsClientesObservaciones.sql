@@ -13,33 +13,7 @@
   [RAhorros] [varchar](100) NULL,
   [RCreditos] [varchar](100) NULL,
   [Responsable] [varchar](100) NULL,
-  [CodOficina] AS ([OOrigen]),
-  CONSTRAINT [PK_tCsClientesObservacionesw] PRIMARY KEY CLUSTERED ([Observacion], [Fecha], [CodUsuario])
+  [CodOficina] [varchar](4) NULL
 )
 ON [PRIMARY]
-GO
-
-CREATE INDEX [IX_tCsClientesObservaciones]
-  ON [dbo].[tCsClientesObservaciones] ([Fecha])
-  ON [PRIMARY]
-GO
-
-CREATE INDEX [IX_tCsClientesObservaciones_1]
-  ON [dbo].[tCsClientesObservaciones] ([CodUsuario])
-  ON [PRIMARY]
-GO
-
-CREATE INDEX [IX_tCsClientesObservaciones_2]
-  ON [dbo].[tCsClientesObservaciones] ([OOrigen])
-  ON [PRIMARY]
-GO
-
-CREATE INDEX [IX_tCsClientesObservaciones_3]
-  ON [dbo].[tCsClientesObservaciones] ([OAhorros])
-  ON [PRIMARY]
-GO
-
-CREATE INDEX [IX_tCsClientesObservaciones_4]
-  ON [dbo].[tCsClientesObservaciones] ([OCreditos])
-  ON [PRIMARY]
 GO

@@ -70,14 +70,7 @@
   [Lugar] [varchar](150) NULL,
   [Direccion] [varchar](150) NULL,
   [FechaCastigo] [smalldatetime] NULL,
-  [DiasUltimaCancelacion] [int] NULL,
-  CONSTRAINT [PK_tCsUnisapCA] PRIMARY KEY CLUSTERED ([Fecha], [CodUsuario], [CodPrestamo])
+  [DiasUltimaCancelacion] [int] NULL
 )
 ON [PRIMARY]
-GO
-
-CREATE INDEX [IX_tCsUnisapCA]
-  ON [dbo].[tCsUnisapCA] ([CodPrestamo])
-  WITH (FILLFACTOR = 80)
-  ON [PRIMARY]
 GO

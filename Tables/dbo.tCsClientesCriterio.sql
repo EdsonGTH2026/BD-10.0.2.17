@@ -16,8 +16,7 @@
   [PPorcentaje] [int] NULL,
   [PA] [varchar](5) NULL,
   [PAP] [decimal](18, 4) NULL,
-  [Final] [decimal](18, 4) NULL,
-  CONSTRAINT [PK_ClientesObservaciones] PRIMARY KEY CLUSTERED ([Criterio], [CodOficina], [Inicio], [Fin])
+  [Final] [decimal](18, 4) NULL
 )
 ON [PRIMARY]
 GO

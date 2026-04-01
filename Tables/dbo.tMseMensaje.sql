@@ -4,8 +4,7 @@
   [Fin] [smalldatetime] NOT NULL,
   [Registro] [datetime] NULL,
   [Puntaje] [decimal](18, 4) NULL,
-  [Mensaje] [varchar](1000) NULL,
-  CONSTRAINT [PK_tMseMensaje] PRIMARY KEY CLUSTERED ([Ubicacion], [Inicio], [Fin])
+  [Mensaje] [varchar](1000) NULL
 )
 ON [PRIMARY]
 GO

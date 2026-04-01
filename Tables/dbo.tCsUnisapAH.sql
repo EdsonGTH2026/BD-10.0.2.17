@@ -21,15 +21,7 @@
   [NomOficina] [varchar](30) NULL,
   [Ubigeo] [varchar](6) NULL,
   [FechaAlta] [smalldatetime] NULL,
-  [Nomproducto] [varchar](250) NULL,
-  [municipio] [varchar](100) NULL,
-  CONSTRAINT [PK_tCsUnisapAH] PRIMARY KEY CLUSTERED ([Fecha], [CodCuenta], [FraccionCta], [Renovado], [CodUsuario])
+  [Nomproducto] [varchar](250) NULL
 )
 ON [PRIMARY]
-GO
-
-CREATE INDEX [IX_tCsUnisapAH]
-  ON [dbo].[tCsUnisapAH] ([CodCuenta])
-  WITH (FILLFACTOR = 80)
-  ON [PRIMARY]
 GO

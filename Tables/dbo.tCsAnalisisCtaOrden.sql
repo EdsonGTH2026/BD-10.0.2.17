@@ -26,8 +26,7 @@
   [InteresCtaOrden] [decimal](19, 4) NULL,
   [MoratorioVigente] [decimal](19, 4) NULL,
   [MoratorioVencido] [decimal](19, 4) NULL,
-  [MoratorioCtaOrden] [decimal](19, 4) NULL,
-  CONSTRAINT [PK_tCsAnalisisCtaOrden] PRIMARY KEY CLUSTERED ([Dia], [CorteDataNegocio], [ProcesoFinmas], [CodPrestamo], [CodUsuario], [Cuota], [NroDiasAtraso])
+  [MoratorioCtaOrden] [decimal](19, 4) NULL
 )
 ON [PRIMARY]
 GO

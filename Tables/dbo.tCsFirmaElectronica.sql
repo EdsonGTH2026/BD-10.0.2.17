@@ -6,9 +6,8 @@
   [Sistema] [varchar](2) NULL,
   [Dato] [varchar](100) NULL,
   [Secuencia] [int] NULL,
-  [Activo] [bit] NULL CONSTRAINT [DF_tCsFirmaElectronica_Activo] DEFAULT (0),
-  [Motivo] [varchar](500) NULL,
-  CONSTRAINT [PK_tCsFirmaElectronica] PRIMARY KEY CLUSTERED ([Firma])
+  [Activo] [bit] NULL,
+  [Motivo] [varchar](500) NULL
 )
 ON [PRIMARY]
 GO

@@ -28,8 +28,7 @@
   [Dato8] [varchar](50) NULL,
   [Dato9] [varchar](50) NULL,
   [Dato10] [varchar](50) NULL,
-  [Dato11] [varchar](50) NULL,
-  CONSTRAINT [PK_tCsFirmasReportes] PRIMARY KEY CLUSTERED ([Firma])
+  [Dato11] [varchar](50) NULL
 )
 ON [PRIMARY]
 GO
